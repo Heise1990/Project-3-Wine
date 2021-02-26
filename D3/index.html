@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Malbec forever</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="index.html"> An anlysis on indicators on wine quality
+            <img class="nav-vine" src="static/images/409-4098952_grape-clipart-stencil-grape-silhouette-clip-art.png">
+          </a>
+        </div>
+      </div>
+    </nav>
+    
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center">
+        <div class="hero text-center"></div>
+          <h1> Join us in our journey trying to build a wine quality predictor </h1>
+          <p>The visualizations below show insights and trends to explore the dataset</p>
+      </div>
+    </div>
+    <div class="row">
+      
+      </div>
+      <div class="col-md-12">
+        <div class="well">
+            <h5>visualization 1</h5>
+        </div>
+        
+        <div id="bar1"></div>
+    </div>
+    <div class="row">
+      </div>
+      <div class="col-md-12">
+        <div class="well">
+          <h5>visualization 2</h5>
+      </div>
+        
+        <div id="bar2"></div>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="well">
+                <h5>visualization 3</h5>
+                
+            </div> 
+          <div id="bar3"></div>
+        </div>
+      </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="well"></div>
+        <div id="scatter"></div>
+        
+      </div>
+    </div>
+    <footer class="footer">
+      <span class="bottom">Wine Quality Analysis</span>
+    </footer>
+  </div>
+
+  <!-- <script>
+    var data = JSON.parse('{{data | tojson}}');
+  </script> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="static/app.js"></script>
+  
+</body>
+
+</html>
