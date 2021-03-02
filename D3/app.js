@@ -22,7 +22,7 @@ export default function define(runtime, observer) {
         var description = []
         data1.forEach(function(d){
             
-            if (d.points > '90') 
+            if (d.points < '85') 
             description.push(d.description);
 
         });
@@ -136,24 +136,7 @@ export default function define(runtime, observer) {
     )});
       return main;
 }
-d3.csv("/Documents/Project-3-Wine/winemag-data_first150k.csv").then((data1) => {
-    var points = []
-    data1.forEach(function(d){
-        
-        points.push(d.points);
-
-    });
-    var price = []
-    data1.forEach(function(d){
-        
-        price.push(d.price);
-
-    });
-    var points_price = points.concat(price)
-    console.log(points_price)
-
-
-});    
+  
 //export default function define1(runtime, observer) {
     //const main1 = runtime.module();
     ///main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
@@ -178,7 +161,7 @@ d3.csv("/Documents/Project-3-Wine/winemag-data_first150k.csv").then((data1) => {
 //         var description_low = []
 //         data1.forEach(function(d){
             
-//             if (d.points < '87') 
+//             if (d.points < '85') 
 //             description_low.push(d.description);
 
 //         });
@@ -290,3 +273,132 @@ d3.csv("/Documents/Project-3-Wine/winemag-data_first150k.csv").then((data1) => {
     
 //     return main1
 // }
+
+
+
+d3.csv("/Documents/Project-3-Wine/winemag-data_first150k.csv").then((data1) => {
+    
+    
+    data1.forEach(function(d) {
+        d.points = +d.points,
+        d.price = +d.price
+    })
+    const reduced = data1.reduce(function(m,d){
+        if(!m[d.country]){
+            m[d.country] = {...d, count: 1};
+        }
+        m[d.country].points += d.points;
+        m[d.country].price += d.price;
+        m[d.country].count += 1;
+        return m;
+    },{});
+
+    const result = Object.keys(reduced).map(function(k){
+        const item = reduced[k];
+        return {
+            country : item.country,
+            avg_points: item.points/item.count,
+            avg_price: item.price/item.count
+        }
+    })
+    //console.log(JSON.stringify(result,null,4));
+    //console.log(result)
+    var sorted = result.sort(function(a, b){return b.avg_points-a.avg_points});
+    //console.log(sorted)
+    var country = []
+    
+    sorted.forEach(function(d){
+        
+        country.push(d.country);
+
+    });
+    var points = []
+    
+    sorted.forEach(function(d){
+        
+        points.push(d.avg_points);
+
+    });
+    var price = []
+    
+    sorted.forEach(function(d){
+        
+        price.push(d.avg_price);
+
+    });
+    var trace1 = {
+        x: country,
+        y: points,
+        name: 'Points',
+        type: 'bar'
+    };
+    var trace2 = {
+        x: country,
+        y: price,
+        name: 'Price',
+        type: 'bar',
+        marker: {
+            color: 'rgb(204,204,204)'
+        }
+    };
+    var data = [trace1, trace2];
+    var layout = {
+        barmode: 'group',
+        height: 500,
+        width: 1100,
+        xaxis: {
+            tickangle: -45
+        }
+    };
+    Plotly.newPlot("bar", data, layout)
+
+    var points = []
+    data1.forEach(function(d){
+        
+        points.push(d.points);
+
+    });
+    var price = []
+    data1.forEach(function(d){
+        
+        price.push(d.price);
+
+    });
+    //var points_price = points.concat(price)
+    //console.log(points_price)
+
+    var trace10 = {
+        x: points,
+        y: price,
+        mode: 'markers',
+        //type: 'scatter',
+        marker: { 
+            color: points,
+            //size: x[i]*y[i],
+            //opacity: [1, 0.8, 0.6, 0.4]
+        }
+    };
+
+    var data10 = [trace10];
+
+    var layout10 = {
+        title: 'Points vs Prices',
+        showlegend: false,
+        height: 500,
+        width: 1100,
+        xaxis: {
+            //range: [5.5],
+            title: {
+              text: 'Points'
+            }
+        },
+        yaxis: {
+            //range: [0,5],
+            title: {
+              text: 'Price'
+            }
+        }
+        
+    };
+    Plotly.newPlot("scatter", data10, layout10);
+});  
