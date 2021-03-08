@@ -16,7 +16,7 @@
 
     // Load the Observable runtime and inspector.
     import define from "./index.js";
-    import define1 from "./index1.js";
+    
     import {Runtime, Library, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
     
     // Your notebook, compiled as an ES module.
@@ -38,7 +38,7 @@
         </div>
       </div>
     </nav>
-    
+  
   <div class="container">
     <div class="row">
       <div class="col-md-12 jumbotron text-center">
@@ -47,51 +47,61 @@
           <p>The visualizations below show insights and trends to explore the dataset</p>
       </div>
     </div>
-    <div class="row">
-      
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+     <div class="well">
+          <h5>Quantity of reviews by points</h5>
       </div>
-      <div class="col-md-12">
-        <div class="well">
-            <h5>Word Count for wines with 90 points and above</h5>
-        </div>
-        
-        <div id="svg-area"></div>
+    
+      <div id="bar2"></div>
     </div>
-    <div class="row">
+  </div>
+  <hr></hr>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="well">
+          <h5>Word Count for wines with 96 points and above</h5>
       </div>
+        
+      <div id="svg-area"></div>
+    </div>
+  </div>
+  <div class="row">
       <div class="col-md-12">
         <div class="well">
-          <h5>Word Count for wines with 86 points and below</h5>
-      </div>
+          <h5>Word Count for wines with 82 points and below</h5>
+        </div>
         
         <div id="svg-area2"></div>
       </div>
-    </div>
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well">
-                <h5>Average points and price per country</h5>
-                
-            </div> 
-          <div id="bar"></div>
-          
-        </div>
-      </div>
-    <div class="row"></div>
-    <div class="row">
-      <div class="col-md-12">
-        <div class="well">
-          <h5>Points vs Prices</h5>
-          
-        </div> 
-        <div id="scatter"></div>
-      </div>
-    </div>
-  
-    <footer class="footer">
-      <span class="bottom">Wine Quality Analysis</span>
-    </footer>
   </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="well">
+          <h5>Average points and price per country</h5>
+                
+      </div> 
+      <div id="bar"></div>
+          
+    </div>
+  </div>
+  <hr></hr>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="well">
+        <h5>Points vs Prices</h5>
+          
+      </div> 
+      <div id="scatter"></div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <span class="bottom">Wine Quality Analysis</span>
+  </footer>
+</div>
 
   <!-- <script>
     var data = JSON.parse('{{data | tojson}}');
