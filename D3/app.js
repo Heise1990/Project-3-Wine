@@ -73,7 +73,7 @@ export default function define(runtime, observer) {
         //console.log(keys);
         //console.log(values);
         
-        const stopwords = ['i','me','my','myself','we','our','ours','ourselves','you','your','yours','yourself','yourselves','he','him','his','himself','she','her','hers','herself','it','its','itself','they','them','their','theirs','themselves','what','which','who','whom','this','that','these','those','am','is','are','was','were','be','been','being','have','has','had','having','do','does','did','doing','a','an','the','and','but','if','or','because','as','until','while','of','at','by','for','with','about','against','between','into','through','during','before','after','above','below','to','from','up','down','in','out','on','off','over','under','again','further','then','once','here','there','when','where','why','how','all','any','both','each','few','more','most','other','some','such','no','nor','not','only','own','same','so','than','too','very','s','t','can','will','just','don','should','now']
+        var stopwords = ['i','me','my','myself','we','our','ours','ourselves','you','your','yours','yourself','yourselves','he','him','his','himself','she','her','hers','herself','it','its','itself','they','them','their','theirs','themselves','what','which','who','whom','this','that','these','those','am','is','are','was','were','be','been','being','have','has','had','having','do','does','did','doing','a','an','the','and','but','if','or','because','as','until','while','of','at','by','for','with','about','against','between','into','through','during','before','after','above','below','to','from','up','down','in','out','on','off','over','under','again','further','then','once','here','there','when','where','why','how','all','any','both','each','few','more','most','other','some','such','no','nor','not','only','own','same','so','than','too','very','s','t','can','will','just','don','should','now']
         
         for (var i = 0; i < sortedArr.lenght; i++) {
             if (sortedArr[i] == stopwords) {
@@ -83,7 +83,7 @@ export default function define(runtime, observer) {
 
         //console.log(sortedArr);
         
-        var data = [{word: "fruit", quantity: 412}, {word:"black", quantity: 268}, {word: "tannins", quantity: 252}, {word: "rich", quantity: 198}, {word: "ripe", quantity: 197}, {word: "cherry", quantity: 187}, {word: "acidity", quantity: 263}, {word: "great", quantity: 155}, {word: "dark", quantity: 153}, {word: "aromas", quantity: 139}, {word: "spice", quantity: 137}, {word: "Cabernet", quantity: 133}, {word: "sweet", quantity: 114}, {word:"structure", quantity: 108}, {word: "dense", quantity: 106}, {word: "age", quantity: 106}, {word: "concentrated", quantity: 105}, {word: "years", quantity: 199}, {word: "complex", quantity: 102}, {word: "red", quantity: 102}, {word: "berry", quantity: 96}, {word: "long", quantity: 94}, {word: "firm", quantity: 94}, {word: "chocolate", quantity: 93}, {word: "blackberry", quantity: 90}, {word: "notes", quantity: 88}, {word: "structured", quantity: 88}, {word: "new", quantity: 87}, {word: "dry", quantity: 83}, {word: "raspberry", quantity: 82}, {word: "intense", quantity: 81}, {word:"balanced", quantity: 158}, {word: "finish", quantity: 81}, {word: "richness", quantity: 79}, {word: "powerful", quantity: 79}, {word: "oak", quantity: 78}, {word: "well", quantity: 78}, {word: "vintage", quantity: 77}, {word: "delicious", quantity: 75}, {word: "licorice", quantity: 73}, {word: "texture", quantity: 70}, {word: "power", quantity: 70}]
+        var data = [{word: "fruit", quantity: 412}, {word:"flavors", quantity: 256}, {word:"black", quantity: 268}, {word: "tannins", quantity: 252}, {word: "rich", quantity: 198}, {word: "ripe", quantity: 197}, {word: "cherry", quantity: 187}, {word: "acidity", quantity: 263}, {word: "great", quantity: 155}, {word: "dark", quantity: 153}, {word: "aromas", quantity: 139}, {word: "spice", quantity: 137}, {word: "Cabernet", quantity: 133}, {word: "sweet", quantity: 114}, {word:"structure", quantity: 196}, {word: "dense", quantity: 106}, {word: "age", quantity: 106}, {word: "concentrated", quantity: 105}, {word: "years", quantity: 199}, {word: "complex", quantity: 102}, {word: "red", quantity: 102}, {word: "berry", quantity: 96}, {word: "long", quantity: 94}, {word: "firm", quantity: 94}, {word: "chocolate", quantity: 93}, {word: "blackberry", quantity: 90}, {word: "notes", quantity: 88}, {word: "new", quantity: 87}, {word: "dry", quantity: 83}, {word: "raspberry", quantity: 82}, {word: "intense", quantity: 81}, {word:"balanced", quantity: 158}, {word: "finish", quantity: 81}, {word: "richness", quantity: 79}, {word: "powerful", quantity: 79}, {word: "oak", quantity: 78}, {word: "well", quantity: 78}, {word: "vintage", quantity: 77}, {word: "delicious", quantity: 75}, {word: "licorice", quantity: 73}, {word: "texture", quantity: 70}, {word: "power", quantity: 70}]
         console.log(data.length)
         data.forEach(function(d) {
             d.quantity = +d.quantity
@@ -219,8 +219,8 @@ export default function define(runtime, observer) {
 
 }
 );
-    main.variable(observer("data")).define("data", [{word: "fruit", quantity: 412}, {word:"black", quantity: 268}, {word: "tannins", quantity: 252}, {word: "rich", quantity: 198}, {word: "ripe", quantity: 197}, {word: "cherry", quantity: 187}, {word: "acidity", quantity: 263}, {word: "great", quantity: 155}, {word: "dark", quantity: 153}, {word: "aromas", quantity: 139}, {word: "spice", quantity: 137}, {word: "Cabernet", quantity: 133}, {word: "sweet", quantity: 114}, {word:"structure", quantity: 108}, {word: "dense", quantity: 106}, {word: "age", quantity: 106}, {word: "concentrated", quantity: 105}, {word: "years", quantity: 199}, {word: "complex", quantity: 102}, {word: "red", quantity: 102}, {word: "berry", quantity: 96}, {word: "long", quantity: 94}, {word: "firm", quantity: 94}, {word: "chocolate", quantity: 93}, {word: "blackberry", quantity: 90}, {word: "notes", quantity: 88}, {word: "structured", quantity: 88}, {word: "new", quantity: 87}, {word: "dry", quantity: 83}, {word: "raspberry", quantity: 82}, {word: "intense", quantity: 81}, {word:"balanced", quantity: 158}, {word: "finish", quantity: 81}, {word: "richness", quantity: 79}, {word: "powerful", quantity: 79}, {word: "oak", quantity: 78}, {word: "well", quantity: 78}, {word: "vintage", quantity: 77}, {word: "delicious", quantity: 75}, {word: "licorice", quantity: 73}, {word: "texture", quantity: 70}, {word: "power", quantity: 70}]);
-    main.variable(observer("data_low")).define("data_low", [{word: "flavors", quantity: 1645}, {word: "aromas", quantity: 741}, {word: "palate", quantity: 591}, {word: "fruit", quantity: 768}, {word: "sweet", quantity: 466}, {word: "finish", quantity: 832}, {word: "green", quantity: 369}, {word: "cherry", quantity: 355}, {word: "nose", quantity: 345}, {word: "tastes", quantity: 263}, {word: "simple", quantity: 246}, {word: "red", quantity: 243}, {word: "soft", quantity: 240}, {word: "berry", quantity: 227}, {word: "acidity", quantity: 337}, {word: "dry", quantity: 221}, {word: "bitter", quantity: 216}, {word: "citrus", quantity: 195}, {word: "oak", quantity: 187}, {word: "notes", quantity: 186}, {word: "feels", quantity: 184}, {word: "raspberry", quantity: 179}, {word: "herbal", quantity: 178}, {word: "blend", quantity: 177}, {word: "sour", quantity: 176}, {word: "tart", quantity: 174}, {word: "little", quantity: 171}, {word: "apple", quantity: 158}, {word: "thin", quantity: 155}, {word: "tannins", quantity: 151}, {word: "candied", quantity: 149}, {word: "vegetal", quantity: 145}, {word: "mouth", quantity: 145}, {word:"very", quantity: 137}, {word: "heavy", quantity: 136}, {word: "plum", quantity: 133}, {word: "sharp", quantity: 129}, {word: "bit", quantity: 129}, {word: "flavor", quantity: 127}, {word: "white", quantity: 124}, {word: "blackberry", quantity: 122}, {word: "hard", quantity: 117}, {word: "vanilla", quantity: 116}, {word: "smells", quantity: 114}, {word: "flat", quantity: 113}, {word: "alcohol", quantity: 108}]);
+    main.variable(observer("data")).define("data", [{word: "fruit", quantity: 412}, {word:"flavors", quantity: 256}, {word:"black", quantity: 268}, {word: "tannins", quantity: 252}, {word: "rich", quantity: 198}, {word: "ripe", quantity: 197}, {word: "cherry", quantity: 187}, {word: "acidity", quantity: 263}, {word: "great", quantity: 155}, {word: "dark", quantity: 153}, {word: "aromas", quantity: 139}, {word: "spice", quantity: 137}, {word: "Cabernet", quantity: 133}, {word: "sweet", quantity: 114}, {word:"structure", quantity: 196}, {word: "dense", quantity: 106}, {word: "age", quantity: 106}, {word: "concentrated", quantity: 105}, {word: "years", quantity: 199}, {word: "complex", quantity: 102}, {word: "red", quantity: 102}, {word: "berry", quantity: 96}, {word: "long", quantity: 94}, {word: "firm", quantity: 94}, {word: "chocolate", quantity: 93}, {word: "blackberry", quantity: 90}, {word: "notes", quantity: 88}, {word: "new", quantity: 87}, {word: "dry", quantity: 83}, {word: "raspberry", quantity: 82}, {word: "intense", quantity: 81}, {word:"balanced", quantity: 158}, {word: "finish", quantity: 81}, {word: "richness", quantity: 79}, {word: "powerful", quantity: 79}, {word: "oak", quantity: 78}, {word: "well", quantity: 78}, {word: "vintage", quantity: 77}, {word: "delicious", quantity: 75}, {word: "licorice", quantity: 73}, {word: "texture", quantity: 70}, {word: "power", quantity: 70}]);
+    main.variable(observer("data_low")).define("data_low", [{word: "flavors", quantity: 1772}, {word: "aromas", quantity: 741}, {word: "palate", quantity: 591}, {word: "fruit", quantity: 768}, {word: "sweet", quantity: 466}, {word: "finish", quantity: 832}, {word: "green", quantity: 369}, {word: "cherry", quantity: 355}, {word: "nose", quantity: 345}, {word: "tastes", quantity: 263}, {word: "simple", quantity: 246}, {word: "red", quantity: 243}, {word: "soft", quantity: 240}, {word: "berry", quantity: 227}, {word: "acidity", quantity: 337}, {word: "dry", quantity: 221}, {word: "bitter", quantity: 216}, {word: "citrus", quantity: 195}, {word: "oak", quantity: 187}, {word: "notes", quantity: 186}, {word: "feels", quantity: 184}, {word: "raspberry", quantity: 179}, {word: "herbal", quantity: 178}, {word: "blend", quantity: 177}, {word: "sour", quantity: 176}, {word: "tart", quantity: 174}, {word: "little", quantity: 171}, {word: "apple", quantity: 158}, {word: "thin", quantity: 155}, {word: "tannins", quantity: 151}, {word: "candied", quantity: 149}, {word: "vegetal", quantity: 145}, {word: "mouth", quantity: 145}, {word:"very", quantity: 137}, {word: "heavy", quantity: 136}, {word: "plum", quantity: 133}, {word: "sharp", quantity: 129}, {word: "bit", quantity: 129}, {word: "white", quantity: 124}, {word: "blackberry", quantity: 122}, {word: "hard", quantity: 117}, {word: "vanilla", quantity: 116}, {word: "smells", quantity: 114}, {word: "flat", quantity: 113}, {word: "alcohol", quantity: 108}]);
     main.variable(observer("pack")).define("pack", ["d3","width","height"], function(d3,width,height){return(
     data => d3.pack()
         .size([width - 2, height - 2])
@@ -326,6 +326,30 @@ d3.csv("/Documents/Project-3-Wine/clean_data130.csv").then((data1) => {
     };
     Plotly.newPlot("bar", data, layout)
 
+    var trace3 = {
+        x: country,
+        y: points,
+        name: 'Points',
+        type: 'bar'
+    };
+    
+    var data = [trace3];
+    var layout = {
+        barmode: 'group',
+        height: 500,
+        width: 1400,
+        xaxis: {
+            tickangle: -45
+        },
+        yaxis: {
+            range: [80,95],
+            title: {
+              text: 'Points'
+            }
+        }
+    };
+    Plotly.newPlot("bar3", data, layout)
+
     var points = []
     data1.forEach(function(d){
         
@@ -375,10 +399,7 @@ d3.csv("/Documents/Project-3-Wine/clean_data130.csv").then((data1) => {
         
     };
     Plotly.newPlot("scatter", data10, layout10);
-});  
-
-d3.csv("/Documents/Project-3-Wine/clean_data130.csv").then((data1) => {
-    
+  
     
     data1.forEach(function(d) {
         d.points = +d.points,
@@ -415,9 +436,22 @@ d3.csv("/Documents/Project-3-Wine/clean_data130.csv").then((data1) => {
     
     var data5 = [trace5];
     var layout5 = {
+        title: 'Quantity of reviews by Points',
         barmode: 'group',
         height: 500,
-        width: 1400
+        width: 1400,
+        xaxis: {
+            
+            title: {
+              text: 'Points'
+            }
+        },
+        yaxis: {
+            
+            title: {
+              text: 'Quantity of reviews'
+            }
+        }
         
     };
     Plotly.newPlot("bar2", data5, layout5)
